@@ -1,0 +1,25 @@
+{
+  "name": "reactive-notebook",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "clean": "rimraf docs/.observable",
+    "download": "notebooks download ",
+    "docs-build": "notebooks build --no-minify --root docs -- docs/index.html",
+    "docs-watch": "notebooks preview --root docs",
+    "notebooks": "notebooks",
+    "update-major": "npx -y npm-check-updates -u",
+    "update": "npx -y npm-check-updates -u -t minor"
+  },
+  "devDependencies": {
+    "@hpcc-js/common": "3.4.0",
+    "@hpcc-js/observablehq-compiler": "3.5.1",
+    "typescript": "5.9.2",
+    "vite": "7.1.4",
+    "rimraf": "6.0.1"
+  }
+}

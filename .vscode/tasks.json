@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "inputs": [
+        {
+            "id": "openSimpleBrowser",
+            "type": "command",
+            "command": "simpleBrowser.show",
+            "args": "http://localhost:5173"
+        }
+    ],
+    "tasks": [
+        {
+            "type": "npm",
+            "label": "dev",
+            "script": "dev",
+            "problemMatcher": [
+                "$tsc-watch"
+            ],
+            "presentation": {
+                "group": "group-build"
+            }
+        },
+        {
+            "label": "Open Simple Browser",
+            "type": "shell",
+            "command": "echo",
+            "args": [
+                "${input:openSimpleBrowser}"
+            ]
+        },
+        {
+            "label": "build",
+            "dependsOn": [
+                "dev"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
